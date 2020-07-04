@@ -66,9 +66,11 @@ More results can be found in the paper.
 ### Citation
 If you use the code in your research, please cite as
 
-    @inproceedings{bib:CVPR20:Qu,
+    @InProceedings{Qu_2020_CVPR,
         author = {Qu, Zhongnan and Zhou, Zimu and Cheng, Yun and Thiele, Lothar},
-        title = {Adaptive Loss-aware Quantization for Multi-bit Networks},
-        booktitle = {IEEE Conference on Computer Vision and Pattern Recognition (CVPR)},
-        year = {2020},
+        title = {Adaptive Loss-Aware Quantization for Multi-Bit Networks},
+        booktitle = {The IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
+        month = {June},
+        year = {2020}
     }
+
