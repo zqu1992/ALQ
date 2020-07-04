@@ -32,15 +32,15 @@ ILSVRC12 dataset should be downloaded and decompressed into the structure like,
         ...
 You may follow some instructions provided in https://pytorch.org/docs/1.1.0/_modules/torchvision/datasets/imagenet.html
 
-To quantize the weights of LeNet5 (on MNIST) by ALQ simply run
+To quantize the weights of LeNet5 (on MNIST) by ALQ run
 
     python lenet5.py --PRETRAIN --ALQ --POSTTRAIN  
 
-To quantize the weights of VGG (on CIFAR10) by ALQ simply run
+To quantize the weights of VGG (on CIFAR10) by ALQ run
 
     python vgg.py --PRETRAIN --ALQ --POSTTRAIN  
 
-To quantize the weights of ResNet18/34 (on ILSVRC12) by ALQ simply run
+To quantize the weights of ResNet18/34 (on ILSVRC12) by ALQ run
 
     python resnet.py --PRETRAIN --DOWNLOAD --ALQ --POSTTRAIN --net resnet18 
     
