@@ -11,9 +11,9 @@ Z. Qu, Z. Zhou, Y. Cheng and L. Thiele. Adaptive Loss-aware Quantization for Mul
 
 ### Dependencies
 
-+ Python 2.7 or 3.3+
-+ Python bindings for OpenCV
-
++ Python 3.7+
++ PyTorch 1.3.1+
++ NVIDIA GPU + CUDA CuDNN (CUDA 10.0)
 
 ### Usage
 
