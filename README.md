@@ -56,7 +56,7 @@ For more options, please refer to `python xxx.py -h` respectively.
 Model|Weight Bitwidth|Weight Storage|Top-1(%)
 :---:|:---:|:---:|:---:
 LeNet5|0.40|22.7KB|99.1
-VGG|0.66|69.3|1.29MB|92.0
+VGG|0.66|1.29MB|92.0
 ResNet18|2.00|3.44MB|70.0
 ResNet34|2.00|6.37MB|73.6
 
