@@ -7,6 +7,8 @@ This repository contains the code of ALQ introduced in our CVPR2020 paper:
 
 Z. Qu, Z. Zhou, Y. Cheng and L. Thiele. Adaptive Loss-aware Quantization for Multi-bit Networks.  
 
+You can also find the corresponding pseudocode in Appendix of the paper.
+
 [PDF](https://arxiv.org/pdf/1912.08883.pdf)
 
 ### Dependencies
@@ -50,6 +52,14 @@ To quantize the weights of ResNet18/34 (on ILSVRC12) by ALQ run
 For more options, please refer to `python xxx.py -h` respectively.
 
 ### Results
+
+Model|Weight Bitwidth|Weight Storage|Top-1(%)
+:---:|:---:|:---:|:---:
+LeNet5|0.40|22.7KB|99.1
+VGG|0.66|69.3|1.29MB|92.0
+ResNet18|2.00|3.44MB|70.0
+ResNet34|2.00|6.37MB|73.6
+
 
 More results can be found in the paper.
 
