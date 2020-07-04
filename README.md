@@ -5,7 +5,9 @@ Adaptive Loss-aware Quantization for Multi-bit Networks
 ### Introduction
 This repository contains the code of ALQ introduced in our CVPR2020 paper:
 
-Z. Qu, Z. Zhou, Y. Cheng and L. Thiele. Adaptive Loss-aware Quantization for Multi-bit Networks. CVPR 2020 [PDF](https://arxiv.org/pdf/1912.08883.pdf)
+Z. Qu, Z. Zhou, Y. Cheng and L. Thiele. Adaptive Loss-aware Quantization for Multi-bit Networks. CVPR 2020. 
+
+[PDF](https://arxiv.org/pdf/1912.08883.pdf)
 
 ### Dependencies
 
