@@ -44,9 +44,9 @@ To quantize the weights of VGG (on CIFAR10) by ALQ run
 
 To quantize the weights of ResNet18/34 (on ILSVRC12) by ALQ run
 
-    python resnet.py --PRETRAIN --DOWNLOAD --ALQ --POSTTRAIN --net resnet18 
+    python resnet.py --PRETRAIN --DOWNLOAD --ALQ --POSTTRAIN --net resnet18 --data /PATH/TO/ILSVRC12
     
-    python resnet.py --PRETRAIN --DOWNLOAD --ALQ --POSTTRAIN --net resnet34
+    python resnet.py --PRETRAIN --DOWNLOAD --ALQ --POSTTRAIN --net resnet34 --data /PATH/TO/ILSVRC12
     
     
 For more options, please refer to `python xxx.py -h` respectively.
