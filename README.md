@@ -17,7 +17,9 @@ Z. Qu, Z. Zhou, Y. Cheng and L. Thiele. Adaptive Loss-aware Quantization for Mul
 
 ### Usage
 
-Download the ImageNet dataset and decompress into the structure like
+Both MNIST and CIFAR10 datasets can be automatically downloaded via Pytorch.
+
+ILSVRC12 dataset should be downloaded and decompressed into the structure like,
 
     dir/
       train/
@@ -28,14 +30,22 @@ Download the ImageNet dataset and decompress into the structure like
       val/
         ILSVRC2012_val_00000001.JPEG
         ...
+You may follow some instructions provided in https://pytorch.org/docs/1.1.0/_modules/torchvision/datasets/imagenet.html
 
-To train a quantized "pre-activation" ResNet-18, simply run
+To quantize the weights of LeNet5 (on MNIST) by ALQ simply run
 
-    python imagenet.py --gpu 0,1,2,3 --data /PATH/TO/IMAGENET --mode preact --depth 18 --qw 1 --qa 2 --logdir_id w1a2 
+    python lenet5.py --PRETRAIN --ALQ --POSTTRAIN  
 
-After the training, the result model will be stored in `./train_log/w1a2`.
+To quantize the weights of VGG (on CIFAR10) by ALQ simply run
 
-For more options, please refer to `python imagenet.py -h`. 
+    python vgg.py --PRETRAIN --ALQ --POSTTRAIN  
+
+To quantize the weights of ResNet18/34 (on ILSVRC12) by ALQ simply run
+
+    python resnet.py --PRETRAIN --DOWNLOAD --ALQ --POSTTRAIN  
+    
+    
+For more options, please refer to `python xxx.py -h` respectively.
 
 ### Results
 
