@@ -221,12 +221,11 @@ if __name__ == "__main__":
             net = torch.nn.DataParallel(net).cuda()
             loss_func = torch.nn.CrossEntropyLoss().cuda()
             optimizer = torch.optim.SGD(net.parameters(), lr=0.4, nesterov=True, momentum=0.9, weight_decay=1e-4)
-            
-            print('original accuracy...')
             get_accuracy(net, train_loader, loss_func)
             validate(net, val_loader, loss_func)
             test(net, test_loader, loss_func)
             save_model_ori(args.model_ori, net.module, optimizer)
+
         else:
             print('pretraining...')
             if args.net == 'resnet18':
@@ -268,8 +267,7 @@ if __name__ == "__main__":
         if args.net == 'resnet18':
             net = ResNet(BasicBlock, [2, 2, 2, 2])
         elif args.net == 'resnet34':
-            net = ResNet(BasicBlock, [3, 4, 6, 3])
-        
+            net = ResNet(BasicBlock, [3, 4, 6, 3])  
         print('loading pretrained full precision resnet model ...')
         checkpoint = torch.load(args.model_ori)
         net.load_state_dict(checkpoint['net_state_dict'])
@@ -282,12 +280,12 @@ if __name__ == "__main__":
 
         print('initialization (structured sketching)...')
         parameters_w, parameters_b, parameters_w_bin = initialize(net, train_loader, loss_func, args.structure, args.subc, args.max_bit)
+        optimizer_b = torch.optim.Adam(parameters_b, weight_decay=args.wd) 
+        optimizer_w = ALQ_optimizer(parameters_w, weight_decay=args.wd)
         val_accuracy = validate(net, val_loader, loss_func)
         best_acc = val_accuracy[0]
         test(net, test_loader, loss_func)
         save_model(args.model, net.module, optimizer_w, optimizer_b, parameters_w_bin)
-        optimizer_b = torch.optim.Adam(parameters_b, weight_decay=args.wd) 
-        optimizer_w = ALQ_optimizer(parameters_w, weight_decay=args.wd)
         
         M_p = (args.pr/args.top_k)/(args.epoch_prune*math.ceil(num_training_sample/args.batch_size))
 
@@ -335,7 +333,6 @@ if __name__ == "__main__":
             net = ResNet(BasicBlock, [2, 2, 2, 2])
         elif args.net == 'resnet34':
             net = ResNet(BasicBlock, [3, 4, 6, 3])
-
         loss_func = torch.nn.CrossEntropyLoss().cuda()
 
         parameters_w = []
@@ -345,14 +342,15 @@ if __name__ == "__main__":
                 parameters_w.append(param)
             else:
                 parameters_b.append(param)
+
         optimizer_b = torch.optim.Adam(parameters_b, weight_decay=args.wd) 
         optimizer_w = ALQ_optimizer(parameters_w, weight_decay=args.wd)
         
         print('load quantized resnet model...')
         checkpoint = torch.load(args.model)
+        net.load_state_dict(checkpoint['net_state_dict'])
         print('available gpu number: ', torch.cuda.device_count())
         net = torch.nn.DataParallel(net).cuda()
-
         optimizer_w.load_state_dict(checkpoint['optimizer_w_state_dict'])
         optimizer_b.load_state_dict(checkpoint['optimizer_b_state_dict'])
         for state in optimizer_b.state.values():
