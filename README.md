@@ -66,7 +66,7 @@ More results can be found in the paper.
 ### Citation
 If you use the code in your research, please cite as
 
-Zhongnan Qu, Zimu Zhou, Yun Cheng, Lothar Thiele. Adaptive Loss-Aware Quantization for Multi-Bit Networks. In \textit{the IEEE/CVF Conference on Computer Vision and Pattern Recognition} (CVPR), 2020, pp. 7988-7997
+Zhongnan Qu, Zimu Zhou, Yun Cheng, Lothar Thiele. Adaptive Loss-Aware Quantization for Multi-Bit Networks. In *the IEEE/CVF Conference on Computer Vision and Pattern Recognition* (CVPR), 2020, pp. 7988-7997
 
     @InProceedings{Qu_2020_CVPR,
         author = {Qu, Zhongnan and Zhou, Zimu and Cheng, Yun and Thiele, Lothar},
