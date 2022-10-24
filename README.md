@@ -9,7 +9,7 @@ Z. Qu, Z. Zhou, Y. Cheng and L. Thiele. Adaptive Loss-aware Quantization for Mul
 
 You can also find the corresponding pseudocode in Appendix of the paper.
 
-[PDF](https://arxiv.org/pdf/1912.08883.pdf)
+[PDF](https://openaccess.thecvf.com/content_CVPR_2020/papers/Qu_Adaptive_Loss-Aware_Quantization_for_Multi-Bit_Networks_CVPR_2020_paper.pdf)
 
 ### Dependencies
 
